@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+@media only screen and (max-width:860px) {
+.serach-box .sel-dep,.serach-box .sel-arv{
+/*width:50%;*/
+}
+.serach-box .dep-box,.serach-box .dep-arv{
+float: none;
+width: 100%;
+}
+.serach-box .dep-arv{
+margin-bottom: 30px;
+}
+.serach-box .dep-box{
+margin-bottom: 10px;
+}
+.serach-box .sel-arv{
+padding-right: 0;
+}
+.serach-box .sel-shop{
+clear: left;
+width: 100%;
+padding-left: 0;
+}
+.serach-box .sel-type{
+width: 100%;
+padding-right: 0;
+}
+.serach-box .sel-size{
+clear: left;
+width: 100%;
+padding-top: 10px;
+padding-right: 0;
+}
+.serach-box .dep-arv-arw{
+float: none;
+width: 100%;
+}
+.serach-box .dep-arv-arw:after{
+content: "\f175";
+display: block;
+width: 100%;
+padding: 0 0 10px;
+}
+}
+@media only screen and (max-width: 760px){
+#sitename{
+padding: 0 0 0 10px;
+font-size: 13px;
+}
+#sitename span{
+font-size: 10px;
+}
+header #header-wrapper{
+padding-right: 0!important;
+}
+.serach-box-ttl span+span{
+margin-top: 10px;
+}
+}
+
+@media only screen and (max-width:525px) {
+.serach-box .sel-dep,.serach-box .sel-arv{
+clear: left;
+width: 100%;
+padding-right: 0;
+}
+.serach-box .sel-arv{
+/*padding-top: 10px;*/
+}
+.search-btn button{
+width: 98%;
+}
+.serach-box{
+margin-top: 20px;
+}
+
+.sel-type{margin-bottom: 10px;}
+
+}
+
+@media only screen and (max-width:525px) {
+.sort-box ul{padding-top: 4px;}
+.sort-box .plan-sort li+li+li{display: none;}
+.sort-box .cart-conf-btn{clear: both;display: block;padding: 14px 0 5px;}
+.sort-box .cart-conf{width: 140px;margin: 0 auto;}
+}
+
+@media only screen and (min-width:860px) {
+.use-day .use-dep,.use-day .use-arv{width: 50%;padding: 2% 8%;}
+}
+@media only screen and (max-width:860px) {
+.use-dep dt,.use-arv dt{display: block;padding-top: 0;margin-bottom: 10px;}
+}
+@media only screen and (max-width:525px) {
+.use-day{background: #F5F5F5}
+.use-day .use-dep,.use-day .use-arv{width: 100%;padding: 2%;}
+}
+
+@media only screen and (min-width:859px) {
+.plan-list{display: table;}
+.plan-list-imgw,.plan-list-dtl,.plan-list-prc{display: table-cell;}
+.plan-list-dtl{width: 355px;}
+.plan-list-details{border-top: 1px dotted #BDCCD4;}
+.plan-list-prc .plan-price{margin-top: 10px;margin-bottom: 35px;}
+}
+@media only screen and (max-width:860px) {
+.plan-list{}
+.plan-list-imgw,.plan-list-dtl,.plan-list-prc{}
+.plan-list-imgw{float: left;}
+.plan-list-prc{clear: left;padding-bottom: 20px;}
+.plan-list-dtl{overflow: hidden;}
+.plan-list-prc .plan-price{display: inline-block;margin-bottom:20px;}
+.plan-list-prc .btn a{display: block;margin: 0 10px;}
+}
+@media only screen and (max-width:645px) {
+.plan-list-title{padding-left: 20px;padding-right: 20px;padding-top: 0;}
+.plan-list-details{margin: 20px;}
+.plan-list-imgw{float: none;}
+.plan-list-imgw{display: block;width: 100%;}
+.plan-list-imgw .plan-list-img{display: block;width: 100%;height: 100%;}
+}
+
+
+/*プラン詳細
+====================================================*/
+@media only screen and (max-width:760px) {
+.detail-box{margin-top: 50px;}
+.plan-img{float: none;margin-right: 0;margin-bottom: 20px;}
+}
+/*ギャラリー
+-----------------------------*/
+@media only screen and (max-width:760px) {
+.plan-dtl-gallery .gallery-main{width: 100%;height: auto;}
+.plan-dtl-gallery .gallery-main li{position: relative;}
+.plan-dtl-gallery .gallery-main li a{width: 100%;height: auto;}
+.modal-gallery .gallery-main li img{width: 100%;}
+.modal-gallery .gallery-sum{width: 100%;}
+}
+/*予約
+-----------------------------*/
+@media only screen and (min-width:978px) {
+.detail-yoyaku{width: 630px;}
+}
+
+@media only screen and (max-width:977px) {
+.detail-yoyaku{width: 66%}
+.yoyaku-date dd.pln-dev select.pln-shop,.yoyaku-date dd.pln-arv select.pln-shop{display: block;margin-top: 5px;}
+}
+@media only screen and (max-width:860px) {
+.detail-yoyaku{float: none;width: 100%;margin-bottom: 30px;}
+.side-float{float: none;width: 100%;}
+.detail-estimate{width: 100%;}
+}
+@media only screen and (max-width:760px) {
+.yoyaku-date dd.pln-dev select.pln-shop, .yoyaku-date dd.pln-arv select.pln-shop{width: 100%;}
+}
+@media only screen and (max-width:359px) {
+.yoyaku-date dt{/*float: none;clear: left;*/text-align: left;padding-bottom: 15px;}
+.yoyaku-date dd{margin-left: 0;}
+}
+
+/*modal
+====================================================*/
+@media only screen and (max-width:1200px) {
+#modal-type{width:90%;}
+}
+@media only screen and (max-width:977px) {
+#modal,#modal-cart,#modal-size{width:85%;}
+}
+@media only screen and (max-width:760px) {
+#modal,#modal-cart,#modal-size{height: 80%;}
+#modal-cart .modal-content .cart-in{width: 100%;margin: 0;}
+.modal-head{font-size: 16px;}
+#modal-close, .modal-close{display: block;right: 10px;}
+#modal-type li dt img.pc{display: none;}
+#modal-type li dt img.sp{display: block;width: 100%;}
+#modal-type li{width: calc((100% - 60px) / 2);}
+}
+@media only screen and (max-width:525px) {
+#modal-type li{width: 100%;margin: 20px 0;}
+}
+/*カート
+====================================================*/
+@media only screen and (max-width:359px) {
+.cart-in-userday .use-day{margin: 15px}
+.plan-unit{margin-left: 0;margin-right: 0;}
+}
+
+
+/*入力～完了
+====================================================*/
+@media only screen and (max-width:760px) {
+.form-table{border-left: 1px solid #bdccd4;border-right: 1px solid #bdccd4;}
+.form-table li strong{float: none;width:100%;display: block;}
+.form-table li br.sp{display: none;}
+.main-btn .btn{padding-left: 10%;padding-right: 10%;width: 100%;font-size:20px;display: block;}
+.plan-unit-img{float: none;margin-right: 0;}
+.plan-unit-img .plan-list-img{width: 100%;}
+.plan-unit-img .plan-list-details{margin-bottom: 20px;}
+.cart-add-cycle a.btn.btn-submit{display: block;}
+}
+@media only screen and (max-width:525px) {
+.form-table .form-app{display: block;}
+.form-table select.form-app{width: 100%!important;}
+.form-table li .form-set input.wid-ss,.form-table li .form-set input.wid-sm,.form-table li .form-set select.wid-mm,.form-table li .form-set input.wid-mm{width: 100%;}
+.form-table li .form-set span{display: block;margin-bottom: 10px;margin-top: 10px;}
+.form-table li .form-set span.highlighter{display: inline;}
+.form-table li.from-tall .form-set span,.form-table li.form-birth .form-set span,.form-table li.form-add .form-set span{display: inline-block;margin-bottom: 10px;margin-top: 10px;}
+.service-terms .service-terms-wrap{margin-bottom: 0;}
+.plan-unit-dtl .unit-days span{display: block;margin-bottom: 10px;width: 40px;}
+.plan-unit-wrap{padding: 15px;}
+.plan-unit-total{text-align: center;margin-bottom: 25px;margin-top: 25px;}
+.plan-unit-total dt{float: none;margin-bottom: 18px;}
+.plan-unit-total dd{text-align: center;}
+.main-btn{margin-top: 25px;}
+}
+.select-ken{margin-top: 10px;}

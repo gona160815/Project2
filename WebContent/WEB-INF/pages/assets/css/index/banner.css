@@ -1,0 +1,507 @@
+@charset "utf-8";
+ul#portfolio{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.alertCAP_banner01 div{box-sizing: border-box;}
+.alertCAP_banner01{
+	height: 100px;
+	width: 300px;
+	border: 1px solid #ccae96;
+	background-color: #FFF;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.alertCAP_banner01 .alertCAP_titleicon{
+	height: 30px;
+	width: 100%;
+	background-color: #ee1c25;
+	border-bottom: 1px solid  #ccae96;
+	color: #fff;
+}
+.alertCAP_banner01.bannerGreen .alertCAP_titleicon{background-color: #51aa02;}
+.alertCAP_banner01.bannerBlue .alertCAP_titleicon{background-color: #008aeb;}
+.alertCAP_banner01.bannerYellow .alertCAP_titleicon{background-color: #FFFF00;color: #333;}
+
+.alertCAP_banner01 .alertCAP_titleicon img{
+	height: 30px;
+	vertical-align: middle;
+	float: left;
+}
+.alertCAP_banner01 .alertCAP_titleicon span{
+	font-family: "微軟正黑體", "新細明體", Arial;
+	font-size: 18px;
+	line-height: 30px;
+	padding-right: 5px;
+	padding-left: 5px;
+	display: inline-block;
+}
+ 
+.alertCAP_banner01 .alertCAP_logo{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 65px;
+	width: 45px;
+	padding-top: 3px;
+}
+.alertCAP_banner01 .alertCAP_con{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #ccae96;
+	font-family: Arial , "新細明體", "細明體";
+	font-size: 13px;
+	line-height: 20px;
+	height:68px;
+	width: 255px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	padding: 5px;
+	word-break: break-all;
+}
+.alertCAP_banner01 .alertCAP_time{
+	font-family: Arial, "新細明體", "細明體";
+	font-size: 12px;
+	color: #999;
+}
+.alertCAP_banner01 .alertCAP_moreBOX{}
+
+
+
+.alertCAP_banner02 div{box-sizing: border-box;}
+.alertCAP_banner02{
+	height:250px;
+	width:300px;
+	border: 1px solid #ccae96;
+	background-color: #FFF;
+	position: relative;
+	box-sizing: border-box;
+}
+.alertCAP_banner02 .alertCAP_titleicon {
+	height: 35px;
+	width:298px;
+	background-color: #ee1c25;
+	text-align: center;
+	padding-top: 5px;
+}
+.alertCAP_banner02.bannerGreen .alertCAP_titleicon {background-color: #51aa02;}
+.alertCAP_banner02.bannerBlue .alertCAP_titleicon {background-color: #008aeb;}
+.alertCAP_banner02.bannerYellow  .alertCAP_titleicon {background-color: #FFFF00;color: #333;} 
+
+.alertCAP_banner02 .alertCAP_titleicon img{
+	height: 35px;
+}
+.alertCAP_banner02 .alertCAP_title{
+	font-family: "微軟正黑體", "新細明體", Arial;
+	font-size: 18px;
+	color: #FFF;
+	background-color: #ee1c25;
+	height: 40px;
+	width:298px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+}
+.alertCAP_banner02.bannerGreen .alertCAP_title {background-color: #51aa02;}
+.alertCAP_banner02.bannerBlue .alertCAP_title {background-color: #008aeb;}
+.alertCAP_banner02.bannerYellow .alertCAP_title {background-color: #FFFF00;color: #333;}
+
+.alertCAP_banner02 .alertCAP_con{
+	font-family: Arial , "新細明體", "細明體";
+	font-size: 13px;
+	line-height: 20px;
+	width:298px;
+	position: absolute;
+	padding: 10px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #ccae96;
+	top: 75px;
+	word-break: break-all;
+	height: 95px;
+}
+.alertCAP_banner02 .alertCAP_time{
+	font-family: Arial, "新細明體", "細明體";
+	font-size: 12px;
+	color: #999;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.alertCAP_banner02 .alertCAP_logo{
+	position: absolute;
+	bottom: 0px;
+	height: 40px;
+	width: 150px;
+	left: 0px;
+	padding-top: 8px;
+	padding-left: 15px;
+}
+.alertCAP_banner02 .alertCAP_moreBOX{
+	/*height: 35px;
+	width: 150px;*/
+	position: absolute;
+	bottom: 5px;
+	padding-top: 10px;
+	text-align: center;
+	right: 5px;
+}
+.alertCAP_banner02  a.BUTmore:link , .alertCAP_banner02 a.BUTmore:visited{
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius  : 3px;
+	font-family: Arial, "新細明體";
+	font-size: 12px;
+	line-height: 20px;
+	line-height: 25px\0;
+	color: #FFF;
+	background-color: #333333;
+	display: inline-block;
+	height: 20px;
+	width: 80px;
+	text-align: center;
+	text-decoration: none;
+	}
+.alertCAP_banner02  a.BUTmore:hover{
+	background-color: #FC0;
+	color: #333;
+}
+
+
+.alertCAP_banner03 div{box-sizing: border-box;}
+.alertCAP_banner03{
+	height:100px;
+	width: 170px;
+	background-color: #ee1c25;
+	position: relative;
+	padding: 5px;
+	box-sizing: border-box;
+	
+}
+.alertCAP_banner03.bannerGreen{background-color: #51aa02;}
+.alertCAP_banner03.bannerBlue{background-color: #008aeb;}
+.alertCAP_banner03.bannerYellow{background-color: #FFFF00;}
+
+.alertCAP_banner03 .alertCAP_title{
+	font-family: "微軟正黑體", "新細明體", Arial;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	height: 20px;
+	margin-bottom: 3px;
+	padding-bottom: 5px;
+	color:#fff;
+}
+.alertCAP_banner03.bannerYellow .alertCAP_title{color: #333;}
+
+.alertCAP_banner03 .alertCAP_con{
+	font-family: Arial, "新細明體", "細明體";
+	font-size: 13px;
+	line-height:18px;
+	word-break: break-all;
+	color: #FFFFFF;
+}
+.alertCAP_banner03.bannerYellow .alertCAP_con{color: #333;}
+
+.alertCAP_banner03 .alertCAP_time{
+	font-family: Arial, "新細明體", "細明體";
+	font-size: 12px;
+	color: #FFF;
+	position: absolute;
+	right: 1px;
+	bottom: 1px;
+	line-height: 25px;
+	height: 25px;
+	padding-right: 5px;
+}
+.alertCAP_banner03.bannerYellow .alertCAP_time{color: #666;}
+
+.alertCAP_banner03 .alertCAP_moreBOX{
+	position: absolute;
+	bottom: 1px;
+	text-align: center;
+	right:1px;
+	height: 25px;
+	width: 25px;
+	background-color:#333;
+}
+.alertCAP_banner03  a.BUTmore:link , .alertCAP_banner03 a.BUTmore:visited{
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	/* 讓字消失 */
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background-image: url(images/banner03_BUT.png);
+	background-repeat: no-repeat;
+	background-color: #FC0;
+	background-position: center center;
+	}
+.alertCAP_banner03  a.BUTmore:hover{
+	background-color: #FF9;
+}
+.alertCAP_banner03 .alertCAP_logo{
+	position: absolute;
+	bottom: 0px;
+	height: 25px;
+	width: 36px;
+	left: 1px;
+	bottom:1px;
+	 }
+.alertCAP_banner03 .alertCAP_logo img{ height:25px;}
+
+.alertCAP_banner04 div{box-sizing: border-box;}
+.alertCAP_banner04{
+	height: 155px;
+	width: 180px;
+	border: 1px solid #ccae96;
+	background-color: #FFF;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.alertCAP_banner04 .alertCAP_title{
+	font-family: "微軟正黑體", "新細明體", Arial;
+	font-size: 18px;
+	color: #FFF;
+	height: 45px;
+	background-color: #ee1c25;
+	width:178px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.alertCAP_banner04.bannerGreen .alertCAP_title{background-color: #51aa02;}
+.alertCAP_banner04.bannerBlue .alertCAP_title{background-color: #008aeb;}
+.alertCAP_banner04.bannerYellow .alertCAP_title{background-color: #FFFF00;color: #333;}
+
+.alertCAP_banner04 .alertCAP_con{
+	font-family: Arial, "新細明體", "細明體";
+	font-size: 13px;
+	line-height: 18px;
+	width: 178px;
+	position: absolute;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #ccae96;
+	word-break: break-all;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+.alertCAP_banner04 .alertCAP_time{
+	font-family: Arial, "新細明體", "細明體";
+	font-size: 11px;
+	color: #FFF;
+	line-height: 15px;
+}
+.alertCAP_banner04.bannerYellow .alertCAP_time{color: #333;}
+
+.alertCAP_banner04 .alertCAP_logo{
+	position: absolute;
+	bottom: 0px;
+	height: 35px;
+	left: 0px;
+	padding-left: 5px;
+}
+.alertCAP_banner04 .alertCAP_moreBOX{
+	height: 30px;
+	width: 80px;
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	right: 10px;
+	padding-top: 5px;
+}
+.alertCAP_banner04  a.BUTmore:link , .alertCAP_banner04 a.BUTmore:visited{
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius  : 3px;
+	font-family: Arial, "新細明體";
+	font-size: 12px;
+	line-height: 20px;
+	line-height: 25px\0;
+	color: #FFF;
+	background-color: #333;
+	display: inline-block;
+	height: 20px;
+	width: 80px;
+	text-align: center;
+	text-decoration: none;
+	}
+.alertCAP_banner04  a.BUTmore:hover{
+	color: #333;
+	background-color: #FC0;
+}
+
+
+.alertCAP_banner05 div{box-sizing: border-box;}
+.alertCAP_banner05{
+	height: 350px;
+	width: 180px;
+	border: 1px solid #ccae96;
+	background-color: #FFF;
+	position: relative;
+	box-sizing: border-box;
+}
+.alertCAP_banner05 .alertCAP_titleicon{
+	height: 35px;
+	width: 178px;
+	background-color: #ee1c25;
+	text-align: center;
+	padding-top: 5px;
+}
+.alertCAP_banner05.bannerGreen .alertCAP_titleicon{background-color: #51aa02;}
+.alertCAP_banner05.bannerBlue .alertCAP_titleicon{background-color: #008aeb;}
+.alertCAP_banner05.bannerYellow .alertCAP_titleicon{background-color: #FFFF00;color: #333;}
+
+.alertCAP_banner05 .alertCAP_titleicon img{height: 35px;}
+.alertCAP_banner05 .alertCAP_title{
+	background-color: #ee1c25;
+	width: 178px;
+	font-family: "微軟正黑體", "新細明體", Arial;
+	font-size: 18px;
+	line-height: 40px;
+	height: 40px;
+	color: #FFF;
+	text-align: center;
+}
+.alertCAP_banner05.bannerGreen .alertCAP_title{background-color: #51aa02;}
+.alertCAP_banner05.bannerBlue .alertCAP_title{background-color: #008aeb;}
+.alertCAP_banner05.bannerYellow .alertCAP_title{background-color: #FFFF00;color: #333;}
+
+.alertCAP_banner05 .alertCAP_logo{
+	position: absolute;
+	bottom: 50px;
+}
+.alertCAP_banner05 .alertCAP_con{
+	font-family: Arial , "新細明體", "細明體";
+	font-size: 13px;
+	line-height: 20px;
+	width: 178px;
+	position: absolute;
+	padding: 5px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #ccae96;
+	top: 75px;
+	word-break:break-all;
+}
+.alertCAP_banner05 .alertCAP_time{
+	font-family: Arial, "新細明體", "細明體";
+	font-size: 12px;
+	color: #999;
+}
+.alertCAP_banner05 .alertCAP_moreBOX{
+	height: 50px;
+	width: 178px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #ccae96;
+	position: absolute;
+	bottom: 0px;
+}
+.alertCAP_banner05  a.BUTmore:link , .alertCAP_banner05 a.BUTmore:visited{
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius  : 3px;
+	font-family: Arial, "新細明體";
+	font-size: 12px;
+	line-height: 20px;
+	line-height: 25px\0;
+	color: #FFF;
+	background-color: #333333;
+	display: inline-block;
+	height: 20px;
+	width: 80px;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 50px;
+	text-decoration: none;
+	}
+.alertCAP_banner05  a.BUTmore:hover{
+	background-color: #FC0;
+	color: #333;
+}
+
+.alertCAP_banner06 div{box-sizing: border-box;} 
+a.alertCAP_banner06{
+	display: inline-block;
+	height: 300px;
+	width: 300px;
+	background-color: #f06261;
+	color: #FFF;
+	font-family: Arial, "微軟正黑體", "新細明體";
+	text-decoration: none;
+	transition:background 0.5s;
+	box-sizing: border-box;
+}
+a.alertCAP_banner06:hover{
+	background-color: #9e2221;
+}
+
+a.alertCAP_banner06.bannerGreen{background-color: #51aa02;}
+a.alertCAP_banner06.bannerGreen:hover{
+	background-color: #367102;
+}
+a.alertCAP_banner06.bannerBlue{background-color: #008aeb;}
+a.alertCAP_banner06.bannerBlue:hover{
+	background-color: #026eba;
+}
+a.alertCAP_banner06.bannerYellow{background-color: #FFFF00;color: #333;}
+a.alertCAP_banner06.bannerYellow:hover{
+	background-color: #d4d402;
+}
+
+.liquid-slider h2{
+	display: none;
+} 
+.alertCAP_banner06 .alertCAP_titleTXT{
+	text-align: center;
+	margin: 5px;
+	display: block;
+	font-size: 20px;
+	line-height:15px;
+}
+.alertCAP_banner06 .alertCAP_titleTXT img{
+	display: inline-block;
+	height: 60px;
+	vertical-align: middle;
+}
+ 
+.alertCAP_banner06 .alertCAP_date{
+	font-size: 12px;
+	color: #f6de18;
+	text-align: center;
+	display: block;
+	margin:0px;
+}
+a.alertCAP_banner06.bannerYellow .alertCAP_date{color: #333;}
+
+.alertCAP_banner06  .alertCAP_message{
+	padding: 10px;
+	font-size: 15px;
+	line-height: 20px;
+	display: block;
+	margin: 0px;
+}
+.alertCAP_banner06 .alertCAP_logo{
+	position: absolute;
+	left: 5px;
+	bottom: 30px;
+	background-image: url(images/banner_logo_whitee.png);
+	background-repeat: no-repeat;
+	display: block;
+	height: 30px;
+	width: 43px;
+}
+.alertCAP_banner06.bannerYellow .alertCAP_logo{
+	border-radius:3px;
+	background-color:rgba(0,0,0,0.5);
+}

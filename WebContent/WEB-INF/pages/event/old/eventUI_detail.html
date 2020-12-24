@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .carousel .carousel-item img {
+            min-height: 400px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-inner .carousel-item>div {
+                display: none;
+            }
+            .carousel-inner .carousel-item>div:first-child {
+                display: block;
+            }
+        }
+        
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+        /* display 3 */
+        
+        @media (min-width: 768px) {
+            .carousel-inner .carousel-item-right.active,
+            .carousel-inner .carousel-item-next {
+                transform: translateX(33.333%);
+            }
+            .carousel-inner .carousel-item-left.active,
+            .carousel-inner .carousel-item-prev {
+                transform: translateX(-33.333%);
+            }
+        }
+        
+        .carousel-inner .carousel-item-right,
+        .carousel-inner .carousel-item-left {
+            transform: translateX(0);
+        }
+        
+        .imgcontainer {
+            background-image: url(road.jpg);
+            background-color: (0, 0, 0, 0.1);
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center;
+            width: 60%;
+            top: 0;
+            padding: 0;
+            height: 300px;
+            border-radius: 1%;
+            margin: auto;
+            background-size: cover;
+        }
+        
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .scrollby {
+            bottom: 50px;
+            position: fixed;
+            right: 10px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/731d88c153.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+        <!-- 首頁&品牌 -->
+
+        <a class="navbar-brand text-center" href="<c:url value='/Homepage.jsp'/>">去騎腳踏車吧</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!-- 自行車資訊 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <svg width="3.2em" height="3.2em" viewBox="0 0 16 16" class="bi bi-bicycle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4 4.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1v.5h4.14l.386-1.158A.5.5 0 0 1 11 4h1a.5.5 0 0 1 0 1h-.64l-.311.935.807 1.29a3 3 0 1 1-.848.53l-.508-.812-2.076 3.322A.5.5 0 0 1 8 10.5H5.959a3 3 0 1 1-1.815-3.274L5 5.856V5h-.5a.5.5 0 0 1-.5-.5zm1.5 2.443l-.508.814c.5.444.85 1.054.967 1.743h1.139L5.5 6.943zM8 9.057L9.598 6.5H6.402L8 9.057zM4.937 9.5a1.997 1.997 0 0 0-.487-.877l-.548.877h1.035zM3.603 8.092A2 2 0 1 0 4.937 10.5H3a.5.5 0 0 1-.424-.765l1.027-1.643zm7.947.53a2 2 0 1 0 .848-.53l1.026 1.643a.5.5 0 1 1-.848.53L11.55 8.623z" />
+                      </svg>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value='/bikeIndex.controller'/>">自行車道</a>
+                        <a class="dropdown-item" href="#">補給站點</a>
+                    </div>
+                </li>
+                <!-- 租車 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg width="2.8em" height="2.8em" viewBox="0 0 16 16" class="bi bi-shop" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+                          </svg>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value='/bikeStorePre.controller?page=1' />">門市資訊</a>
+                        <a class="dropdown-item" href="<c:url value='/maintainStorePre.controller?pageNo=1'/>">門市管理</a>
+
+                    </div>
+                </li>
+                <!-- 活動 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg width="2.8em" height="2.8em" viewBox="0 0 16 16" class="bi bi-calendar-date" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                        <path
+                            d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                      </svg> </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="event.controller?pageNo=1&query=&categoryId=">一般用戶查詢</a>
+                        <a class="dropdown-item" href="eventmgr.controller?pageNo=1&query=&categoryId=">管理者</a>
+                    </div>
+                </li>
+                <!-- 住宿 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                      </svg> </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="event.controller?pageNo=1&query=&categoryId=">一般用戶查詢</a>
+                        <a class="dropdown-item" href="eventmgr.controller?pageNo=1&query=&categoryId=">管理者</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <!-- 搜尋 -->
+                    <li class="nav-item dropdown mx-1">
+                        <a href="" class="nav-link mx-3"> <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                         </svg>
+                        </a>
+                    </li>
+                    <!-- 訂單管理 -->
+                    <li class="nav-item mx-2"><a class="nav-link " href="#"><svg
+                    width="2.5em" height="2.5em" viewBox="0 0 16 16"
+                    class="bi bi-bag-check" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z" />
+                    <path fill-rule="evenodd"
+                        d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    </svg></a>
+                    </li>
+                    <!-- 購物車 -->
+                    <li class="nav-item dropdown mx-1">
+                        <a href="" class="nav-link mx-3"> <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                          </svg>
+                        </a>
+                    </li>
+
+                    <!-- 會員登入 -->
+                    <c:if test="${ empty loginOK }">
+                        <li class="nav-item dropdown mx-1">
+                            <a href="loginPage" class="nav-link mx-3">
+                                <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-person-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                    d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                    <path fill-rule="evenodd"
+                                    d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                  </svg>
+                            </a>
+                        </li>
+                    </c:if>
+
+
+
+                    <!-- 會員注册 -->
+
+                    <li class="nav-item dropdown mx-1 my-2"><a class="btn btn-outline-primary" href="registPage" role="button">會員註冊</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <!-- nav bar end -->
+    <!-- image -->
+
+
+
+    <div class="container my-1">
+        <!-- HOMEPAGE EVENTCAT EVENTID -->
+        <div id="backtop" class="font-weight-light text-secondary  ">
+            <span class="text-left "><a class="text-decoration-none" href="#"><i class="text-decoration-none text-muted fas fa-home">首頁</i></a></span>
+            <span class="text-left "><a class="text-decoration-none text-muted" href="#">/ 親子</a></span>
+            <span class="float-right">活動編號#6881</span>
+
+        </div>
+        <div class="font-weight-light text-secondary text-left">
+
+        </div>
+    </div>
+    <div class="imgcontainer">
+
+    </div>
+
+    <!-- container -->
+    <div class="container my-5">
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- EVENT-TITLE -->
+                <div class="event-title ">
+                    <!-- website -->
+                    <h3 class="p-2">序展－【 宜蘭的誔生 】 互動劇場
+                        <!-- event-favorite -->
+                        <a class="event-favorite btn float-right">
+
+                            <i class="far fa-heart"></i>
+                        </a>
+                        <!-- event-like -->
+                        <a class="event-like btn float-right">
+
+                            <i class="far fa-thumbs-up"></i>
+                        </a>
+                    </h3>
+
+                </div>
+                <!-- event-locationname -->
+                <div class="mt-2 event-locationname">
+                    <span><i class="fas fa-location-arrow mx-1"></i>宜蘭縣立蘭陽博物館</span>
+                </div>
+                <hr/>
+                <!-- event-location -->
+                <div class="event-location">
+                    <span><i class="fas fa-map-marker-alt mx-1"></i>宜蘭縣頭城鎮青雲路三段750號</span>
+                </div>
+                <hr/>
+                <!-- event-startdate enddate -->
+                <div class="event-date">
+                    <span><i class="far fa-calendar-alt mx-1"></i></span>
+                    <span class="badge badge-pill badge-info">2020-11-14</span> ~ <span class="badge badge-pill badge-warning">2020-12-14</span>
+                </div>
+                <hr/>
+                <div class="event-description">
+                    <span>《宜蘭的誕生》互動劇場以6台投影機做牆面及地面90度的拼接投影，以有趣的多媒體互動方式，
+                        帶領您認識百萬年來蘭陽平原的成因、了解宜蘭自然環境的特色。您可以留意地上的怪方蟹、草地小花、水波紋，
+                        及衛星景點等4種互動遊戲，互動之間，讓您與宜蘭大地親密對話！本區因空間有限，分場次入場。上午場次:9:00開放抽號碼券。
+                        第一場9:15開始，最末場11:15開始。下午場次:13:45開放抽號碼券。第一場14:00開始，最末場16:15開始。每15分鐘一場。
+                        請持號碼券，提前2分鐘至劇場入口等候。
+                        每場次開放20人入場。依當日現場號碼券場次、時間入場，逾時或遺失請重抽號碼券入場。場次人數有限，每人限抽一張，敬請見諒。</span>
+                </div>
+                <hr/>
+            </div>
+            <div class="col-md-4">
+                <hr>
+                <!-- event-price -->
+                <div class="event-price">
+
+                    <h5 class="mb-3"><i class="fas fa-dollar-sign">    全票100元，半票70元。</i>
+                        <!-- event onsales? if onsales show it  -->
+                        <span class="onsales h6 badge-pill badge-success float-right"><small>特價</small></span>
+                        <br></h5>
+
+                    <button type="button" class="btn btn-block btn-lg btn-info"><small>立即下訂</small></button>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+
+
+                <!-- event-pxpy or event-location -->
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.857181769606!2d121.83031941524469!3d24.86872695105021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467f772bdf5ed03%3A0x992386b0ef904f56!2zMjYx5a6c6Jit57ij6aCt5Z-O6Y6u6Z2S6Zuy6Lev5LiJ5q61NzUw6Jmf!5e0!3m2!1szh-TW!2stw!4v1605259263601!5m2!1szh-TW!2stw"
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-12">
+                <div class="comment">
+                    <!-- 判斷是否登入 無登入placeholder:請先登入 -->
+                    <div id="mycomment" class="input-group mb-3">
+                        <img class="rounded-circle" width="60" height="60" src="road.jpg">
+
+                        <input type="text" class="align-middle mx-1 rounded form-control" placeholder="發表您的評論" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <button type="button" class="btn btn-outline-primary">留言</button>
+                        <button type="button" class="btn btn-outline-light">取消</button>
+                    </div>
+
+                    <div class="card m-2">
+                        <div class="card-body ">
+                            <img class="rounded-circle" width="40" height="40" src="road.jpg">
+                            <span class="m-1 ">asd123</span><small class="text-secondary">2020/11/13</small>
+                            <br>
+                            <br>
+                            <span class="ml-5 ">每次帶到酒桶都是空招呵呵
+                                對面太強(x)
+                                隊友太戳(o)</span>
+                        </div>
+                    </div>
+                    <div class="card m-2">
+                        <div class="card-body ">
+                            <img class="rounded-circle" width="40" height="40" src="road.jpg">
+                            <span class="m-1 ">asd123</span><small class="text-secondary">2020/11/13</small>
+                            <br>
+                            <br>
+                            <span class="ml-5 ">每次帶到酒桶都是空招呵呵
+                                對面太強(x)
+                                隊友太戳(o)</span>
+                        </div>
+                    </div>
+                    <div class="card m-2">
+                        <div class="card-body ">
+                            <img class="rounded-circle" width="40" height="40" src="road.jpg">
+                            <span class="m-1 ">asd123</span><small class="text-secondary">2020/11/13</small>
+                            <br>
+                            <br>
+                            <span class="ml-5 ">每次帶到酒桶都是空招呵呵
+                                對面太強(x)
+                                隊友太戳(o)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- back to top -->
+    <div class="m-2 scrollby ">
+        <span>
+            <a href="#" class="btn btn-secondary shadow">
+
+                <i class=" fa fa-2x fa-angle-up"></i>
+            </a>
+        </span>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        $('#recipeCarousel').carousel({
+            interval: 10000
+        })
+
+        $('.carousel .carousel-item').each(function() {
+            var minPerSlide = 3;
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            for (var i = 0; i < minPerSlide; i++) {
+                next = next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
+    </script>
+    <script>
+        $('.scrollby').scrollspy({
+            target: '#backtop'
+        });
+    </script>
+</body>
+
+</html>

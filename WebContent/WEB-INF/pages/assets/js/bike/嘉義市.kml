@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>營建署自行車道</name><open>1</open><description>營建署自行車道</description><Style id="inactive-IconP010202"><IconStyle><color>ff9900cc</color></IconStyle><LabelStyle><scale>0</scale></LabelStyle><LineStyle><color>ff9900cc</color><width>5.0</width></LineStyle></Style><Style id="active-IconP010202"><IconStyle><color>ff9900cc</color></IconStyle><LabelStyle><scale>1</scale></LabelStyle><LineStyle><color>ff9900cc</color><width>5.0</width></LineStyle></Style><StyleMap id="IconP010202"><Pair><key>normal</key><styleUrl>#inactive-IconP010202</styleUrl></Pair><Pair><key>highlight</key><styleUrl>#active-IconP010202</styleUrl></Pair></StyleMap><Style id="inactive-IconP010202"><LineStyle><color>ff9900cc</color><width>5.0</width></LineStyle><LabelStyle><scale>0</scale></LabelStyle></Style><Style id="active-IconP010202"><LineStyle><color>ff9900cc</color><width>5.0</width></LineStyle><LabelStyle><scale>1</scale></LabelStyle></Style><StyleMap id="IconP010202"><Pair><key>normal</key><styleUrl>#inactive-IconP010202</styleUrl></Pair><Pair><key>highlight</key><styleUrl>#active-IconP010202</styleUrl></Pair></StyleMap><Style id="inactive-IconP010300"><IconStyle><color>ff00ff00</color></IconStyle><LabelStyle><scale>0</scale></LabelStyle><LineStyle><color>ff00ff00</color><width>5.0</width></LineStyle></Style><Style id="active-IconP010300"><IconStyle><color>ff00ff00</color></IconStyle><LabelStyle><scale>1</scale></LabelStyle><LineStyle><color>ff00ff00</color><width>5.0</width></LineStyle></Style><StyleMap id="IconP010300"><Pair><key>normal</key><styleUrl>#inactive-IconP010300</styleUrl></Pair><Pair><key>highlight</key><styleUrl>#active-IconP010300</styleUrl></Pair></StyleMap><Style id="inactive-IconP010300"><LineStyle><color>ff00ff00</color><width>5.0</width></LineStyle><LabelStyle><scale>0</scale></LabelStyle></Style><Style id="active-IconP010300"><LineStyle><color>ff00ff00</color><width>5.0</width></LineStyle><LabelStyle><scale>1</scale></LabelStyle></Style><StyleMap id="IconP010300"><Pair><key>normal</key><styleUrl>#inactive-IconP010300</styleUrl></Pair><Pair><key>highlight</key><styleUrl>#active-IconP010300</styleUrl></Pair></StyleMap><Folder><name>自行車道-市區(5)</name><Snippet maxLines="0" /> <Placemark><name>博愛路自行車道</name><圖層名稱>自行車道-市區</圖層名稱><名稱>博愛路自行車道</名稱><SP_DESC>世賢路交叉路口</SP_DESC><EP_DESC>鴿溪寮交叉路口</EP_DESC><CITY>嘉義市</CITY><TOWN>西區</TOWN><MGR_MCH>嘉義市政府觀光新聞處</MGR_MCH><B_LENGTH>2600</B_LENGTH><FIN_DT>0991210</FIN_DT><description><![CDATA[圖層名稱：自行車道-市區
+名稱：博愛路自行車道
+路段起點描述：世賢路交叉路口
+路段迄點描述：鴿溪寮交叉路口
+縣市別：嘉義市
+鄉鎮別：西區
+管養單位：嘉義市政府觀光新聞處
+自行車道長度(M)：2600
+完工日期：0991210
+]]></description > <Snippet maxLines="0" /><styleUrl>IconP010202</styleUrl><LineString><coordinates>120.425863003228,23.4657259999424,0 120.418009997736,23.456513996276,0</coordinates></LineString></Placemark><Placemark><name>世賢路自行車道</name><圖層名稱>自行車道-市區</圖層名稱><名稱>世賢路自行車道</名稱><SP_DESC>與文化路交叉口</SP_DESC><EP_DESC>與新民路交叉口</EP_DESC><CITY>嘉義市</CITY><TOWN>西區</TOWN><MGR_MCH>嘉義市政府觀光新聞處</MGR_MCH><B_LENGTH>6600</B_LENGTH><FIN_DT>0981122</FIN_DT><description><![CDATA[圖層名稱：自行車道-市區
+名稱：世賢路自行車道
+路段起點描述：與文化路交叉口
+路段迄點描述：與新民路交叉口
+縣市別：嘉義市
+鄉鎮別：西區
+管養單位：嘉義市政府觀光新聞處
+自行車道長度(M)：6600
+完工日期：0981122
+]]></description > <Snippet maxLines="0" /><styleUrl>IconP010202</styleUrl><LineString><coordinates>120.44371600141,23.494972004284,0 120.431485001011,23.4939490042604,0 120.428566995123,23.4909579977129,0 120.422688002161,23.4844240028226,0 120.419897995846,23.4802120033137,0 120.419725996727,23.4788350036652,0 120.422173001153,23.4697020015591,0 120.422772996234,23.4687970002221,0 120.43260099881,23.4612390034107,0 120.440797999092,23.461632003152,0</coordinates></LineString></Placemark><Placemark><name>環島自行車路網嘉義市環1-16新建暨既有環島路網優化工程</name><圖層名稱>自行車道-市區</圖層名稱><名稱>環島自行車路網嘉義市環1-16新建暨既有環島路網優化工程</名稱><SP_DESC>忠孝路與博東路交叉口</SP_DESC><EP_DESC>林森東路與嘉義縣市交界</EP_DESC><CITY>嘉義市</CITY><TOWN>嘉義市</TOWN><MGR_MCH>嘉義市政府觀光新聞處</MGR_MCH><B_LENGTH>3800</B_LENGTH><FIN_DT>1071003</FIN_DT><description><![CDATA[圖層名稱：自行車道-市區
+名稱：環島自行車路網嘉義市環1-16新建暨既有環島路網優化工程
+路段起點描述：忠孝路與博東路交叉口
+路段迄點描述：林森東路與嘉義縣市交界
+縣市別：嘉義市
+鄉鎮別：嘉義市
+管養單位：嘉義市政府觀光新聞處
+自行車道長度(M)：3800
+完工日期：1071003
+]]></description > <Snippet maxLines="0" /><styleUrl>IconP010202</styleUrl><LineString><coordinates>120.452815995193,23.4900439997126,0 120.453390997754,23.4861309987069,0 120.454498003027,23.4865409965515,0 120.458296004366,23.4870049972706,0 120.458922999974,23.4870990002124,0 120.459454995693,23.4872019990899,0 120.460579003167,23.4876270027031,0 120.463592999705,23.4887910021966,0 120.465188996847,23.4894919973822,0 120.467969998847,23.4905239991991,0 120.468956998686,23.4910609968993,0 120.470338995542,23.491982000821,0 120.470665004144,23.4920690009949,0 120.471128996526,23.4920760033341,0 120.473967001289,23.4921660022615,0 120.475800997911,23.4922030013023,0 120.476942000473,23.4923600005901,0 120.478782998525,23.4925820019974,0 120.48001899546,23.4928490009831,0 120.480470000924,23.4930230037139,0 120.480855998123,23.4933219974023,0 120.481276998917,23.4937710032676,0 120.482091998572,23.4946760013416,0 120.483319002226,23.4959910016904,0 120.48349999879,23.4960929986741,0 120.483663002264,23.4961089981263,0</coordinates></LineString></Placemark><Placemark><name>頂庄社區自行車道</name><圖層名稱>自行車道-市區</圖層名稱><名稱>頂庄社區自行車道</名稱><SP_DESC>義教街交叉口</SP_DESC><EP_DESC>林森東路296巷</EP_DESC><CITY>嘉義市</CITY><TOWN>東區</TOWN><MGR_MCH>嘉義市政府工務處</MGR_MCH><B_LENGTH>600</B_LENGTH><FIN_DT>0971130</FIN_DT><description><![CDATA[圖層名稱：自行車道-市區
+名稱：頂庄社區自行車道
+路段起點描述：義教街交叉口
+路段迄點描述：林森東路296巷
+縣市別：嘉義市
+鄉鎮別：東區
+管養單位：嘉義市政府工務處
+自行車道長度(M)：600
+完工日期：0971130
+]]></description > <Snippet maxLines="0" /><styleUrl>IconP010202</styleUrl><LineString><coordinates>120.457749002289,23.4985339974986,0 120.46049599529,23.4937130021605,0</coordinates></LineString></Placemark><Placemark><name>頂庄自行車道串連、延伸及優化</name><圖層名稱>自行車道-市區</圖層名稱><名稱>頂庄自行車道串連、延伸及優化</名稱><SP_DESC>林森東路296巷</SP_DESC><EP_DESC>林森東路296巷</EP_DESC><CITY>嘉義市</CITY><TOWN>嘉義市</TOWN><MGR_MCH>嘉義市政府觀光新聞處</MGR_MCH><B_LENGTH>476</B_LENGTH><FIN_DT>108/01/18</FIN_DT><description><![CDATA[圖層名稱：自行車道-市區
+名稱：頂庄自行車道串連、延伸及優化
+路段起點描述：林森東路296巷
+路段迄點描述：林森東路296巷
+縣市別：嘉義市
+鄉鎮別：嘉義市
+管養單位：嘉義市政府觀光新聞處
+自行車道長度(M)：476
+完工日期：108/01/18
+]]></description > <Snippet maxLines="0" /><styleUrl>IconP010202</styleUrl><LineString><coordinates>120.460521001239,23.4936189972307,0 120.461185003532,23.492456997851,0 120.46157399625,23.4917829963135,0 120.461880003877,23.491351999728,0</coordinates></LineString></Placemark></Folder><Folder><name>自行車道-非市區(2)</name><Snippet maxLines="0" /> <Placemark><name>嘉油鐵馬道</name><圖層名稱>自行車道-非市區</圖層名稱><名稱>嘉油鐵馬道</名稱><SP_DESC>美源驛站</SP_DESC><EP_DESC>鴿溪寮站</EP_DESC><CITY>嘉義市</CITY><TOWN>西區</TOWN><MGR_MCH>嘉義市政府觀光新聞處</MGR_MCH><B_LENGTH>3100</B_LENGTH><FIN_DT>0970430</FIN_DT><description><![CDATA[圖層名稱：自行車道-非市區
+名稱：嘉油鐵馬道
+路段起點描述：美源驛站
+路段迄點描述：鴿溪寮站
+縣市別：嘉義市
+鄉鎮別：西區
+管養單位：嘉義市政府觀光新聞處
+自行車道長度(M)：3100
+完工日期：0970430
+]]></description > <Snippet maxLines="0" /><styleUrl>IconP010300</styleUrl><LineString><coordinates>120.420198002314,23.455983003984,0 120.421057001344,23.4565140003002,0 120.422065004626,23.456967001966,0 120.423439002037,23.4574000035336,0 120.4255409983,23.457675999753,0 120.426915003994,23.457853000411,0 120.428587996003,23.4578729979066,0 120.430026003026,23.4581089993605,0 120.433115995249,23.4582470017745,0 120.4343179987,23.4583839961441,0 120.435562003156,23.4584039972754,0 120.43875899661,23.4586799994194,0 120.440240000057,23.458719001984,0 120.442214001871,23.4588569971241,0 120.443287003128,23.4591720008154,0 120.44493900063,23.4601359977652,0 120.445711995919,23.4607270002384,0 120.446935003403,23.4619470027849,0</coordinates></LineString></Placemark><Placemark><name>蘭潭鹿寮自行車網</name><圖層名稱>自行車道-非市區</圖層名稱><名稱>蘭潭鹿寮自行車網</名稱><SP_DESC>蘭潭國小大門口</SP_DESC><EP_DESC>蘭潭國小大門口</EP_DESC><CITY>嘉義市</CITY><TOWN>東區</TOWN><MGR_MCH>嘉義市政府觀光新聞處</MGR_MCH><B_LENGTH>11100</B_LENGTH><FIN_DT>0940630</FIN_DT><description><![CDATA[圖層名稱：自行車道-非市區
+名稱：蘭潭鹿寮自行車網
+路段起點描述：蘭潭國小大門口
+路段迄點描述：蘭潭國小大門口
+縣市別：嘉義市
+鄉鎮別：東區
+管養單位：嘉義市政府觀光新聞處
+自行車道長度(M)：11100
+完工日期：0940630
+]]></description > <Snippet maxLines="0" /><styleUrl>IconP010300</styleUrl><LineString><coordinates>120.468049000192,23.4773389969023,0 120.470537998476,23.4761190021889,0 120.472212000472,23.4747410039116,0 120.473671001112,23.4744259962027,0 120.474315002906,23.4727730002981,0 120.475773997946,23.4714739984735,0 120.476246004526,23.470607997234,0 120.476031003553,23.4690330046908,0 120.476718002702,23.4683249982286,0 120.477404996394,23.4683249991454,0 120.478263003418,23.4675770051029,0 120.478820995634,23.4667500032187,0 120.479850998761,23.465530001468,0 120.480924000391,23.465372003279,0 120.481910995511,23.4660019994018,0 120.482253996415,23.4670259966663,0 120.481996995827,23.4683250040267,0 120.48276899934,23.4700569994072,0 120.483241000982,23.471316001897,0 120.483927996095,23.4726939977705,0 120.484485997194,23.4732850020798,0 120.485301004164,23.4737179982259,0 120.485987996168,23.4750170001784,0 120.487919003367,23.4752530034317,0 120.48954999852,23.4748980024494,0 120.490279003953,23.4755679982468,0 120.490065003181,23.4766699991669,0 120.491095002837,23.4772210035,0 120.490536998998,23.4781659977416,0 120.489635001958,23.4782840037171,0 120.489078000852,23.4785200009101,0 120.488520004152,23.4780870006768,0 120.48753300396,23.4782050045412,0 120.486759999098,23.4781259962388,0 120.485473000463,23.4780869979643,0 120.484227999547,23.4776929986757,0 120.483111995916,23.4770240041896,0 120.482254003745,23.4772599991783,0 120.482253999412,23.4787559974218,0 120.482683000856,23.4798189985327,0 120.482339996096,23.4802119984472,0 120.480194003092,23.4799370030391,0 120.478734999429,23.4791100016091,0 120.47701800235,23.4778509965484,0 120.475473003627,23.4771030044348,0 120.474100001145,23.4775749968969,0 120.472298004235,23.4778110004636,0 120.470495003857,23.4779290037504,0 120.469207996892,23.4777720036961,0 120.468392001693,23.4776540017173,0</coordinates></LineString></Placemark></Folder><Folder><name>座標無法辨識(0)</name><Snippet maxLines="0" /> </Folder></Document></kml>

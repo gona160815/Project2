@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'RideLifePerformance';
+    src: url('../fonts/ridelife-performance-webfont.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/ridelife-performance-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/ridelife-performance-webfont.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ridelife-performance-webfont.ttf')  format('truetype')/* Safari, Android, iOS */;
+  }
+
+/*html,body,div,span,h1,h2,h3,h4,h5,h6,p,em,strong,img,small,dl,dt,dd,ol,ul,li,table,tr,th,td,article,aside,footer,header,main,section {
+	margin:0;
+	font-size:100%;
+	vertical-align:baseline;
+	border:0;
+	background:transparent;
+	box-sizing:border-box;
+	outline:0;
+}*/
+
+body {
+	position:relative;
+	font: 12px/1 'Roboto','ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+	color: #333;
+}
+
+article,aside,footer,header,main,section {
+	display:block;
+}
+
+ol,ul {
+	list-style:none;
+}
+
+table {
+	border-collapse:collapse;
+  border-spacing:0;
+}
+
+a {
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
+	background:transparent;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display:table;
+	content:"";
+}
+
+.clearfix:after {
+	clear:both;
+}

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.16/jquery.timepicker.min.css" integrity="sha512-GgUcFJ5lgRdt/8m5A0d0qEnsoi8cDoF0d6q+RirBPtL423Qsj5cI9OxQ5hWvPi5jjvTLM/YhaaFuIeWCLi6lyQ==" crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js" integrity="sha512-s5u/JBtkPg+Ff2WEr49/cJsod95UgLHbC00N/GglqdQuLnYhALncz8ZHiW/LxDRGduijLKzeYb7Aal9h3codZA==" crossorigin="anonymous"></script>
+
+    <style>
+        .carousel .carousel-item img {
+            min-height: 400px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-inner .carousel-item>div {
+                display: none;
+            }
+            .carousel-inner .carousel-item>div:first-child {
+                display: block;
+            }
+        }
+        
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+        /* display 3 */
+        
+        @media (min-width: 768px) {
+            .carousel-inner .carousel-item-right.active,
+            .carousel-inner .carousel-item-next {
+                transform: translateX(33.333%);
+            }
+            .carousel-inner .carousel-item-left.active,
+            .carousel-inner .carousel-item-prev {
+                transform: translateX(-33.333%);
+            }
+        }
+        
+        .carousel-inner .carousel-item-right,
+        .carousel-inner .carousel-item-left {
+            transform: translateX(0);
+        }
+        
+        .imgcontainer {
+            background-image: url(road.jpg);
+            background-color: (0, 0, 0, 0.1);
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center;
+            width: 60%;
+            top: 0;
+            padding: 0;
+            height: 300px;
+            border-radius: 1%;
+            margin: auto;
+            background-size: cover;
+        }
+        
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .scrollby {
+            bottom: 50px;
+            position: fixed;
+            right: 10px;
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+            background: #333;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/731d88c153.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+        <!-- 首頁&品牌 -->
+
+        <a class="navbar-brand text-center" href="<c:url value='/Homepage.jsp'/>">去騎腳踏車吧</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!-- 自行車資訊 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <svg width="3.2em" height="3.2em" viewBox="0 0 16 16" class="bi bi-bicycle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4 4.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1v.5h4.14l.386-1.158A.5.5 0 0 1 11 4h1a.5.5 0 0 1 0 1h-.64l-.311.935.807 1.29a3 3 0 1 1-.848.53l-.508-.812-2.076 3.322A.5.5 0 0 1 8 10.5H5.959a3 3 0 1 1-1.815-3.274L5 5.856V5h-.5a.5.5 0 0 1-.5-.5zm1.5 2.443l-.508.814c.5.444.85 1.054.967 1.743h1.139L5.5 6.943zM8 9.057L9.598 6.5H6.402L8 9.057zM4.937 9.5a1.997 1.997 0 0 0-.487-.877l-.548.877h1.035zM3.603 8.092A2 2 0 1 0 4.937 10.5H3a.5.5 0 0 1-.424-.765l1.027-1.643zm7.947.53a2 2 0 1 0 .848-.53l1.026 1.643a.5.5 0 1 1-.848.53L11.55 8.623z" />
+                      </svg>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value='/bikeIndex.controller'/>">自行車道</a>
+                        <a class="dropdown-item" href="#">補給站點</a>
+                    </div>
+                </li>
+                <!-- 租車 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg width="2.8em" height="2.8em" viewBox="0 0 16 16" class="bi bi-shop" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+                          </svg>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value='/bikeStorePre.controller?page=1' />">門市資訊</a>
+                        <a class="dropdown-item" href="<c:url value='/maintainStorePre.controller?pageNo=1'/>">門市管理</a>
+
+                    </div>
+                </li>
+                <!-- 活動 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg width="2.8em" height="2.8em" viewBox="0 0 16 16" class="bi bi-calendar-date" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                        <path
+                            d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                      </svg> </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="event.controller?pageNo=1&query=&categoryId=">一般用戶查詢</a>
+                        <a class="dropdown-item" href="eventmgr.controller?pageNo=1&query=&categoryId=">管理者</a>
+                    </div>
+                </li>
+                <!-- 住宿 -->
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                      </svg> </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="event.controller?pageNo=1&query=&categoryId=">一般用戶查詢</a>
+                        <a class="dropdown-item" href="eventmgr.controller?pageNo=1&query=&categoryId=">管理者</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <!-- 搜尋 -->
+                    <li class="nav-item dropdown mx-1">
+                        <a href="" class="nav-link mx-3"> <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                         </svg>
+                        </a>
+                    </li>
+                    <!-- 訂單管理 -->
+                    <li class="nav-item mx-2"><a class="nav-link " href="#"><svg
+                    width="2.5em" height="2.5em" viewBox="0 0 16 16"
+                    class="bi bi-bag-check" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z" />
+                    <path fill-rule="evenodd"
+                        d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    </svg></a>
+                    </li>
+                    <!-- 購物車 -->
+                    <li class="nav-item dropdown mx-1">
+                        <a href="" class="nav-link mx-3"> <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                          </svg>
+                        </a>
+                    </li>
+
+                    <!-- 會員登入 -->
+                    <c:if test="${ empty loginOK }">
+                        <li class="nav-item dropdown mx-1">
+                            <a href="loginPage" class="nav-link mx-3">
+                                <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-person-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                    d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                    <path fill-rule="evenodd"
+                                    d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                  </svg>
+                            </a>
+                        </li>
+                    </c:if>
+
+
+
+                    <!-- 會員注册 -->
+
+                    <li class="nav-item dropdown mx-1 my-2"><a class="btn btn-outline-primary" href="registPage" role="button">會員註冊</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <!-- nav bar end -->
+    <!-- image -->
+
+
+
+    <div class="container my-1">
+        <!-- HOMEPAGE EVENTCAT EVENTID -->
+        <div id="backtop" class="font-weight-light text-secondary  ">
+            <span class="text-left "><a class="text-decoration-none" href="#"><i class="text-decoration-none text-muted fas fa-home">首頁</i></a></span>
+            <span class="text-left "><a class="text-decoration-none text-muted" href="#">/ 行程</a></span>
+
+
+        </div>
+        <div class="font-weight-light text-secondary text-left">
+
+        </div>
+    </div>
+
+    <!-- container -->
+    <div class="container my-5">
+        <div>
+            <h3 class="">個人行程規劃表
+            </h3>
+            <p class="input-group">
+                <input id="name" type="text" class="form-control col-sm-3 border-0 " placeholder="請輸入活動名稱" />
+                <span class="col-sm-7"></span>
+                <span id="save" class="mx-2 col-sm-1 btn btn-outline-success ">儲存</span>
+                <span id="plus" class="col-sm-1 btn btn-outline-primary "><i class="fas fa-plus"></i>新增</span>
+            </p>
+            <hr/>
+        </div>
+        <div id="myAct" class="row">
+            <div id="act-list" class="act-list col-md-12">
+                <p class="mx-2 ">
+                    <input value="行程日期" type="text" class="actDate custom-select custom-select-lg col-md-2" required>
+                </p>
+
+                <span class="mx-2 act-type">
+                    <select class="typeId custom-select custom-select-lg col-md-2">
+                        <option selected>請選擇行程類型</option>
+                        <option value="1">飯店</option>
+                        <option value="2">車行</option>
+                        <option value="3">活動</option>
+                        <option value="4">車道</option>
+                        <option value="5">補給站</option>
+                        <option value="6">我的最愛</option>
+                    </select>
+                </span>
+
+
+
+
+
+                <hr/>
+            </div>
+
+
+
+            <div class="col-md-12">
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- back to top -->
+    <div class="m-2 scrollby ">
+        <span>
+            <a href="#" class="btn btn-secondary shadow">
+
+                <i class=" fa fa-2x fa-angle-up"></i>
+            </a>
+        </span>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script>
+        function addAct() {
+            return `<div id="act-list" class="act-list col-md-12">
+                    <p class="mx-2 ">
+                    <input value="行程日期" type="text" class="actDate custom-select custom-select-lg col-md-2" required>
+                </p>
+
+                <span class="mx-2 act-type">
+                    <select class="typeId custom-select custom-select-lg col-md-2">
+                        <option selected>請選擇行程類型</option>
+                        <option value="1">飯店</option>
+                        <option value="2">車行</option>
+                        <option value="3">活動</option>
+                        <option value="4">車道</option>
+                        <option value="5">補給站</option>
+                        <option value="6">我的最愛</option>
+                    </select>
+                </span><hr/></div>`;
+        }
+
+        function type() {
+            return `<span class="mx-2 act-type">
+                    <select class="typeId custom-select custom-select-lg col-md-2">
+                        <option selected>請選擇行程類型</option>
+                        <option value="1">飯店</option>
+                        <option value="2">車行</option>
+                        <option value="3">活動</option>
+                        <option value="4">車道</option>
+                        <option value="5">補給站</option>
+                        <option value="6">我的最愛</option>
+                    </select>
+                </span>`;
+        }
+
+        function condition() {
+            return `<span class="mx-2 act-type">
+                    <select class="condition custom-select custom-select-lg col-md-2">
+                        <option selected>請選擇搜尋條件</option>
+                        <option value="1">依區域搜尋</option>
+                        <option value="2">關鍵字搜尋</option>
+                        
+                    </select>
+                </span>`;
+        }
+
+        function region() {
+            return `<span class="mx-2 act-location">
+                    <select class="region custom-select custom-select-lg col-md-2">
+                        <option selected>請選擇地區</option>
+                        <option value="基隆市">基隆市</option>
+                        <option value="新北市">新北市</option>
+                        <option value="台北市">台北市</option>
+                        <option value="宜蘭縣">宜蘭縣</option>
+                        <option value="桃園市">桃園市</option>
+                        <option value="新竹縣">新竹縣</option>
+                        <option value="新竹市">新竹市</option>
+                        <option value="苗栗縣">苗栗縣</option>
+                        <option value="臺中市">臺中市</option>
+                        <option value="彰化縣">彰化縣</option>
+                        <option value="南投縣">南投縣</option>
+                        <option value="嘉義縣">嘉義縣</option>
+                        <option value="嘉義市">嘉義市</option>
+                        <option value="臺南市">臺南市</option>
+                        <option value="高雄市">高雄市</option>
+                        <option value="屏東縣">屏東縣</option>
+                        <option value="臺東縣">臺東縣</option>
+                        <option value="花蓮縣">花蓮縣</option>
+                        <option value="澎湖縣">澎湖縣</option>
+                        <option value="金門縣">金門縣</option>
+                        <option value="連江縣">連江縣</option>
+                      </select>
+            </span>`;
+
+
+        }
+
+        function query() {
+            return `<span class="mx-2 act-query">
+                    <input placeholder="請輸入查詢字串" type="text" class="query border-0 custom-select-lg col-md-3">
+                </span> `
+        }
+
+        function info() {
+            return `<span class="mx-2 act-name">
+                    <select class="infoId custom-select custom-select-lg col-md-3">
+                        <option selected>請選擇行程</option>
+                      </select>
+                </span> `;
+
+        }
+
+
+        var orderTime = moment().format("yyyy-MM-DD");
+        $("#plus").on("click", function() {
+            // $("#act-list").clone().appendTo(".row").removeAttr("id");
+            $(".row").append(addAct());
+            $(".actDate").datepicker(opt);
+
+
+
+        });
+
+        $("#myAct").on("change", ".typeId", function() {
+            var typeId = $(this).val();
+            $(this).nextAll().remove();
+            $(this).after(condition());
+            // if ($(this).val() ==6){}  我的最愛直接挑選
+            // if (typeId == 3 || typeId == 5) {
+            //     $("#myAct").on("change", ".region", function() {
+            //         $(this).nextAll().remove();
+            //         $(this).after(info());
+            //         $(this).after(query());
+            //     });
+            // }
+        });
+
+        $("#myAct").on("change", ".condition", function() {
+            var condition = $(this).val();
+            if (condition == 1) {
+                $(this).nextAll().remove();
+                $(this).after(region());
+            }
+            if (condition == 2) {
+                $(this).nextAll().remove();
+                $(this).after(query())
+            }
+        });
+
+
+
+        $("#myAct").on("change", ".region", function() {
+            $(this).nextAll().remove();
+            $(this).after(info());
+        });
+
+        $("#myAct").on("keyup", ".query", function() {
+            $(this).nextAll().remove();
+            $(this).after(info());
+        });
+    </script>
+    <script>
+        // var opt = {
+        //     dateFormat: 'yy-mm-dd',
+        //     showSecond: false,
+        //     timeFormat: 'h:mm',
+        //     separator: ' ',
+        //     interval: 15,
+        //     maxMinutes: 30,
+        //     dropdown: true
+        // };
+        // $(function() {
+        //     $(".startdate,.enddate").datetimepicker(opt);
+        // });
+        var opt = {
+            dateFormat: 'yy-mm-dd',
+            dropdown: true
+        };
+        $(function() {
+            $(".actDate").datepicker(opt);
+        });
+    </script>
+    <!-- <script>
+        $(document).ready(function() {
+            var a = '宜蘭縣立蘭陽博物館';
+            $.ajax({
+                url: 'https://nominatim.openstreetmap.org/search.php?q=' + a + '&format=jsonv2',
+                type: 'GET',
+                contentType: 'text; charset=utf-8',
+                dataType: 'json',
+                success: function(res) {
+                    var px = res[0].lon;
+                    var py = res[0].lat;
+                    var map;
+                    console.log(res);
+                    console.log(px);
+                    console.log(py);
+                    map = L.map('map').setView([py, px], 15);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '<a href="https://www.openstreetmap.org/">OSM</a>',
+                        maxZoom: 18,
+                    }).addTo(map);
+                    var marker = L.marker([py, px]);
+                    marker.addTo(map);
+                    // $("#map").append(map);
+                }
+
+
+            });
+        });
+    </script> -->
+    <script>
+        $('.scrollby').scrollspy({
+            target: '#backtop'
+        });
+    </script>
+</body>
+
+</html>

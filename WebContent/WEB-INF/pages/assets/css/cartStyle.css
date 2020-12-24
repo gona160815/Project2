@@ -1,0 +1,75 @@
+.table {
+  width: 100%;
+  text-align:center; }
+  .table th {
+    font-weight: 500; }
+  .table .thead-primary {
+    background: #2b376e; }
+    .table .thead-primary tr th {
+     text-align: center !important;
+      padding: 20px 10px;
+      color: #fff !important;
+      border: 1px solid transparent !important; }
+  .table tbody tr td {
+    text-align: center !important;
+    vertical-align: middle;
+    padding: 40px 10px;
+    border: 1px solid transparent !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; }
+    .table tbody tr td.product-remove a {
+      bordeR: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 4px 10px;
+      color: #000000; }
+      .table tbody tr td.product-remove a:hover {
+        border: 1px solid #f87969;
+        background: #f87969; }
+        .table tbody tr td.product-remove a:hover span {
+          color: #fff; }
+    .table tbody tr td.quantity {
+      width: 20%; }
+    .table tbody tr td.image-prod .img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto; }
+    .table tbody tr td.product-name {
+      width: 30%; }
+      .table tbody tr td.product-name h3 {
+        font-size: 16px; }
+    .table tbody tr td.total, .table tbody tr td.price {
+      color: #000000; }
+		.cart-wrap .btn-primary {
+  display: inline-block; }
+
+.cart-total {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 20px; }
+  .cart-total h3 {
+    font-size: 16px;
+    margin-bottom: 20px; }
+  .cart-total p {
+    width: 100%;
+    display: block; }
+    .cart-total p span {
+      display: block;
+      width: 50%;}
+    .cart-total p.total-price span {
+      text-transform: uppercase; }
+      .cart-total p.total-price span:last-child {
+        color: #000000;
+        font-weight: 600; }
+  .cart-total hr {
+    background: rgba(255, 255, 255, 0.1); }
+
+
+cart-detail {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.137); }
+  .cart-detail.cart-total {
+    border: 1px solid rgba(0, 0, 0, 0.158); }
+  .cart-detail .btn-primary {
+    display: block;
+    width: 100%; }
