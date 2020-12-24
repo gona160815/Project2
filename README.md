@@ -26,7 +26,7 @@
 
 ![image](https://raw.githubusercontent.com/gona160815/project2/main/img08.jpg)
 
-![image](https://raw.githubusercontent.com/gona160815/project1/main/img09.jpg)
+![image](https://raw.githubusercontent.com/gona160815/project2/main/img09.jpg)
 
 ![image](https://raw.githubusercontent.com/gona160815/project2/main/img10.jpg)
 
